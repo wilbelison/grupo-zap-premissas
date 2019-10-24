@@ -1,11 +1,15 @@
 $(document).ready(
 	function () {
 
-        var video = document.getElementById('video');
-        video.playbackRate = 0.75;
+        
 
 	}
 );
+
+/* video mais lento em 25% */
+
+var video = document.getElementById('video');
+video.playbackRate = 0.75;
 
 /* removedor de acentos */
 

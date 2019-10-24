@@ -6,17 +6,20 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="assets/css/normalize.min.css" rel="stylesheet">
+	<link href="libs/normalize.min.css" rel="stylesheet">
+	<link href="libs/lity.min.css" rel="stylesheet">
+
 	<link href="assets/css/style.css" rel="stylesheet">
 
 	<script src="libs/jquery.min.js"></script>
 	<script src="libs/mustache.min.js"></script>
+	<script src="libs/lity.min.js"></script>
 </head>
 <body>
 
 <div id="hero">
 	<video id="video" autoplay muted loop>
-		<source src="assets/img/video_loop.mp4" type="video/mp4" \>
+		<source src="assets/img/video_loop.mp4" type="video/mp4" />
 	</video>
 	<div class="overlay"></div>
 
@@ -24,28 +27,83 @@
 		<div id="nav">
 			<a href="#" class="logo">Grupo ZAP</a>
 			<ul class="menu">
-				<li><a href="#regras">Regras e premissas</a></li>
-				<li><a href="#externas">Iniciativas externas</a></li>
-				<li><a href="#internas">Iniciativas internas</a></li>
-				<li><a href="#fale">Fale com o time de Branding</a></li>
+				<li><a href="#regras" data-lity>Regras e premissas</a></li>
+				<li><a href="#externas" data-lity>Iniciativas externas</a></li>
+				<li><a href="#internas" data-lity>Iniciativas internas</a></li>
+				<li><a href="#fale" data-lity>Fale com o time de Branding</a></li>
 			</ul>
 		</div>
 
 		<div class="box">
 			<h1>Iniciando uma nova ação na companhia?</h1>
-			<a class="button" href="#regras">Confira nossas regras e premissas</a>
+			<a class="button" href="#regras" data-lity>Confira nossas regras e premissas</a>
 		</div>
 	</div>
+</div>
+
+<div id="iniciativas">
+	<div class="wrapper">
+		<div class="box externas">
+			<h2>Iniciativa<br />externas</h2>
+			<p>Iniciativas que tem como principal propósito impactar o público externo sobre o Grupo ZAP, seja ele B2B ou B2C.</p>
+			<a class="button" href="#externas" data-lity>Confira</a>
+		</div>
+		<div class="box internas">
+			<h2>Iniciativa<br />internas</h2>
+			<p>Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário. e devem ser conhecidas e voltadas para as nossas pessoas.</p>
+			<a class="button" href="#internas" data-lity>Confira</a>
+		</div>
+	</div>
+	<br class="clear" />
 </div>
 
 <div id="footer">
 	<div class="wrapper">
 		<h3>Ainda com dúvidas? Não esqueça de procurar a gente ;)</h3>
-		<a class="button" href="#fale">Fale com o time de Branding</a>
-		<p class="copyright">Copyright © Grupo ZAP 2019</p>
+		<a class="button" href="#fale" data-lity>Fale com o time de Branding</a>
+		<p class="copyright">Grupo ZAP © 2019</p>
 	</div>
 </div>
-	
+
+<!-- LITY's -->
+
+<div id="regras" class="view lity-hide">
+	<div class="container">
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a></div>
+		<div class="content">
+			<div id="" class="qa">
+				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
+				<ul class="options">
+					<li><a class="button active" href="">Grupo ZAP</a></li>
+					<li><a class="button" href="">Área</a></li>
+				</ul>
+				<br class="clear" />
+			</div>
+			<div id="" class="qa active" style="margin-bottom:30px;">
+				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
+				<ul class="options">
+					<li><a class="button" href="">Sim</a></li>
+					<li><a class="button" href="">Não</a></li>
+				</ul>
+				<br class="clear" />
+			</div>
+			<div id="" class="qa active">
+				<ul class="answers">
+					<li class="green">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
+					<li class="yellow">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
+					<li class="red">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
+					<li><a class="button" href="#fale">Fale com o time de Branding</a></li>
+				</ul>
+				<br class="clear" />
+			</div>
+			<ul class="links">
+				<li><a href="" class="reset">Refazer o teste</a></li>
+				<li><a href="" class="back" data-lity-close>Voltar</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- LITY's END -->
 
 	<script src="assets/js/script.js"></script>
 
