@@ -32,6 +32,7 @@
 				<li><a href="#internas" data-lity>Iniciativas internas</a></li>
 				<li><a href="#fale" data-lity>Fale com o time de Branding</a></li>
 			</ul>
+			<a href="#menu" class="mobile" data-lity>Menu</a>
 		</div>
 
 		<div class="box">
@@ -44,12 +45,12 @@
 <div id="iniciativas">
 	<div class="wrapper">
 		<div class="box externas">
-			<h2>Iniciativa<br />externas</h2>
+			<h2>Iniciativa externas</h2>
 			<p>Iniciativas que tem como principal propósito impactar o público externo sobre o Grupo ZAP, seja ele B2B ou B2C.</p>
 			<a class="button" href="#externas" data-lity>Confira</a>
 		</div>
 		<div class="box internas">
-			<h2>Iniciativa<br />internas</h2>
+			<h2>Iniciativa internas</h2>
 			<p>Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário. e devem ser conhecidas e voltadas para as nossas pessoas.</p>
 			<a class="button" href="#internas" data-lity>Confira</a>
 		</div>
@@ -65,13 +66,51 @@
 	</div>
 </div>
 
-<!-- LITY's -->
+<!-- MENU -->
+<div id="menu" class="view lity-hide">
+	<div class="container">
+		<div class="header"><a href="#" class="close" data-lity-close></a></div>
+		<div class="content">
+			<ul class="menu">
+				<li><a href="#regras" data-lity-close data-lity>Regras e premissas</a></li>
+				<li><a href="#externas" data-lity-close data-lity>Iniciativas externas</a></li>
+				<li><a href="#internas" data-lity-close data-lity>Iniciativas internas</a></li>
+				<li><a href="#fale" data-lity-close data-lity>Fale com o time de Branding</a></li>
+			</ul>
+			<br class="clear" />
+		</div>
+	</div>
+</div>
+<!-- MENU END -->
 
+<!-- FALE -->
+<div id="fale" class="view lity-hide">
+	<div class="container">
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Fale com o time de Branding</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
+		<div class="content">
+			<form action="https://mailthis.to/meustudio+premissas@gmail.com"
+			method="POST" encType="multipart/form-data">
+				<input type="text" name="name" placeholder="Seu nome">
+				<input type="email" name="_replyto" placeholder="Seu melhor e-mail">
+				<textarea name="message" placeholder="Mensagem"></textarea>
+				<input type="hidden" name="_subject" value="Regras e premissas">
+				<input type="hidden" name="_after" value="http://premissas.grupozap.com/#">
+				<input type="hidden" name="_honeypot" value="">
+				<input type="hidden" name="_confirmation" value="Mensagem enviada com sucesso ;)">
+				<input type="submit" value="Enviar">
+			</form>
+			<br class="clear" />
+		</div>
+	</div>
+</div>
+<!-- FALE END -->
+
+<!-- REGRAS -->
 <div id="regras" class="view lity-hide">
 	<div class="container">
-		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a></div>
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
 		<div class="content">
-			<div id="" class="qa">
+			<div id="qa_0" class="qa">
 				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
 				<ul class="options">
 					<li><a class="button active" href="">Grupo ZAP</a></li>
@@ -103,7 +142,7 @@
 		</div>
 	</div>
 </div>
-<!-- LITY's END -->
+<!-- REGRAS END -->
 
 	<script src="assets/js/script.js"></script>
 
