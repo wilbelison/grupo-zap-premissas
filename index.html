@@ -69,7 +69,7 @@
 <!-- MENU -->
 <div id="menu" class="view lity-hide">
 	<div class="container">
-		<div class="header"><a href="#" class="close" data-lity-close></a></div>
+		<div class="header">><a href="#" class="back" data-lity-close></a> <h2>Menu</h2> <a href="#" class="close" data-lity-close></a></div>
 		<div class="content">
 			<ul class="menu">
 				<li><a href="#regras" data-lity-close data-lity>Regras e premissas</a></li>
@@ -88,16 +88,29 @@
 	<div class="container">
 		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Fale com o time de Branding</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
 		<div class="content">
-			<form action="https://mailthis.to/meustudio+premissas@gmail.com"
-			method="POST" encType="multipart/form-data">
-				<input type="text" name="name" placeholder="Seu nome">
-				<input type="email" name="_replyto" placeholder="Seu melhor e-mail">
-				<textarea name="message" placeholder="Mensagem"></textarea>
-				<input type="hidden" name="_subject" value="Regras e premissas">
-				<input type="hidden" name="_after" value="http://premissas.grupozap.com/#">
-				<input type="hidden" name="_honeypot" value="">
-				<input type="hidden" name="_confirmation" value="Mensagem enviada com sucesso ;)">
-				<input type="submit" value="Enviar">
+			<form id="fale-form"
+			action="https://formspree.io/mvopbzbk"
+			method="POST"
+			>
+				<p>Envie um e-mail para <a href="mailto:branding@grupozap.com">branding@grupozap.com</a> ou preencha  o formulário abaixo ;)</p>
+				<p class="input">
+					<input type="text" id="fale-nome" name="fale-nome" required />
+					<label for="fale-nome">Seu nome</label>
+				</p>
+				<p class="input">
+					<input type="email" id="_replyto" name="_replyto" required />
+					<label for="_replyto">Seu melhor e-mail</label>
+				</p>
+				<p class="input">
+					<textarea id="fale-mensagem" name="fale-mensagem" required></textarea>
+					<label for="fale-mensagem">Mensagem</label>
+				</p>
+				<p id="fale-status"></p>
+				<p><button id="fale-submit">Enviar</button></p>
+				<ul class="links">
+					<li><a href="javascript:;" id="fale-reset" class="reset">Limpar</a></li>
+					<li><a href="javascript:;" class="back" data-lity-close>Voltar</a></li>
+				</ul>
 			</form>
 			<br class="clear" />
 		</div>
@@ -110,34 +123,37 @@
 	<div class="container">
 		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
 		<div class="content">
-			<div id="qa_0" class="qa">
+			<div id="" class="qa">
 				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
 				<ul class="options">
-					<li><a class="button active" href="">Grupo ZAP</a></li>
-					<li><a class="button" href="">Área</a></li>
+					<li><a class="button" href="">Grupo ZAP</a></li>
+					<li>&nbsp;</li>
+					<li><a class="button active" href="javascript:;">Área</a></li>
 				</ul>
 				<br class="clear" />
 			</div>
-			<div id="" class="qa active" style="margin-bottom:30px;">
-				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
+			<div id="" class="qa">
+				<p>Tem interface com o público externo?</p>
 				<ul class="options">
-					<li><a class="button" href="">Sim</a></li>
-					<li><a class="button" href="">Não</a></li>
+					<li><a class="button active" href="">Sim</a></li>
+					<li>&nbsp;</li>
+					<li><a class="button" href="javascript:;">Não</a></li>
 				</ul>
 				<br class="clear" />
 			</div>
 			<div id="" class="qa active">
 				<ul class="answers">
-					<li class="green">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
-					<li class="yellow">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
-					<li class="red">Pode ter páginas próprias (Blog ou página de inscrição no evento) Pode ter páginas próprias (Blog ou página de inscrição no evento)</li>
-					<li><a class="button" href="#fale">Fale com o time de Branding</a></li>
+					<li class="green">Pode ter páginas próprias (Blog ou página de inscrição no evento);</li>
+					<li class="green">Deve ter a identidade visual do Grupo ZAP;</li>
+					<li class="red">Não pode ter redes sociais;</li>
+					<li class="yellow">Deve contar com a orientação e/ou ajuda do Time de Branding para execução.</li>
+					<li><a class="button" href="#fale" data-lity>Fale com o time de Branding</a></li>
 				</ul>
 				<br class="clear" />
 			</div>
 			<ul class="links">
-				<li><a href="" class="reset">Refazer o teste</a></li>
-				<li><a href="" class="back" data-lity-close>Voltar</a></li>
+				<li><a href="javascript:;" class="reset">Refazer o teste</a></li>
+				<li><a href="javascript:;" class="back" data-lity-close>Voltar</a></li>
 			</ul>
 		</div>
 	</div>
