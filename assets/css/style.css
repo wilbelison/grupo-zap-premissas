@@ -418,6 +418,7 @@ h1, h2, h3 {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-top: 30px;
 }
 
 .view .container .content .links li {
@@ -456,6 +457,7 @@ h1, h2, h3 {
 
 #fale form input[type=text],
 #fale form input[type=email],
+#fale form input[type=phone],
 #fale form textarea {
 	border: solid 1px #D0D0D0;
 	padding: 18px;
@@ -541,9 +543,10 @@ h1, h2, h3 {
 }
 
 #fale-status {
+	font-weight: bold;
+	font-size: 18px;
 	color: #6D767A;
-	text-align: right;
-	background-color: 
+	padding: 30px;
 }
 
 /* REGRAS */
@@ -711,6 +714,7 @@ h1, h2, h3 {
 
 	.lity-inline .lity-content {
 		margin: 0;
+		height: 100%;
 	}
 
 	#nav .menu,
@@ -726,6 +730,10 @@ h1, h2, h3 {
 		overflow-y: auto;
 	}
 
+	.view .container {
+		height: calc(100% - 66px);
+	}
+
 	.view .container .header {
 		padding: 20px;
 		position: fixed;
@@ -733,6 +741,7 @@ h1, h2, h3 {
 		left: 0;
 		background: #FFF;
 		width: 100%;
+		z-index: 1;
 	}
 
 	.view .container .header .back {
@@ -760,8 +769,16 @@ h1, h2, h3 {
 	}
 
 	#menu .menu li {
-		padding: 10px 0;	
+		padding: 20px 0;	
 		text-align: center;
+	}
+
+	#menu .menu li a:active:after {
+		content: '';
+		display: block;
+		border-bottom: solid 2px #C8D419;
+		width: 40px;
+		margin: 0 auto;
 	}
 
 	#menu .menu li a {
@@ -863,4 +880,31 @@ h1, h2, h3 {
 		padding: 14px 0;
 	}
 
+	#mapa {
+		padding: 0;
+		height: 100%;	
+		margin-top: 66px;
+		background-color: #EEEEF3;
+	}
+
+}
+
+.lity.mapa .lity-container,
+.lity.mapa .lity-content,
+.lity.mapa .view,
+.lity.mapa .container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+/* MAP */
+
+#mapa {
+    padding: 0;
+    height: 100%;
+    margin-top: 30px;
+    background-color: #EEEEF3;
 }

@@ -8,12 +8,15 @@
 
 	<link href="libs/normalize.min.css" rel="stylesheet">
 	<link href="libs/lity.min.css" rel="stylesheet">
+	<link href="libs/leaflet.css" rel="stylesheet">
 
 	<link href="assets/css/style.css" rel="stylesheet">
 
 	<script src="libs/jquery.min.js"></script>
-	<script src="libs/mustache.min.js"></script>
 	<script src="libs/lity.min.js"></script>
+	<script src="libs/mustache.min.js"></script>
+	<script src="libs/leaflet.js"></script>
+	
 </head>
 <body>
 
@@ -28,8 +31,8 @@
 			<a href="#" class="logo">Grupo ZAP</a>
 			<ul class="menu">
 				<li><a href="#regras" data-lity>Regras e premissas</a></li>
-				<li><a href="#externas" data-lity>Iniciativas externas</a></li>
-				<li><a href="#internas" data-lity>Iniciativas internas</a></li>
+				<li><a href="#iniciativas-ext-int" data-lity onclick="initMap()">Iniciativas internas</a></li>
+				<li><a href="#iniciativas-ext-int" data-lity onclick="initMap()">Iniciativas externas</a></li>
 				<li><a href="#fale" data-lity>Fale com o time de Branding</a></li>
 			</ul>
 			<a href="#menu" class="mobile" data-lity>Menu</a>
@@ -47,12 +50,12 @@
 		<div class="box externas">
 			<h2>Iniciativa externas</h2>
 			<p>Iniciativas que tem como principal propósito impactar o público externo sobre o Grupo ZAP, seja ele B2B ou B2C.</p>
-			<a class="button" href="#externas" data-lity>Confira</a>
+			<a class="button" href="#iniciativas-ext-int" data-lity>Confira</a>
 		</div>
 		<div class="box internas">
 			<h2>Iniciativa internas</h2>
 			<p>Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário. e devem ser conhecidas e voltadas para as nossas pessoas.</p>
-			<a class="button" href="#internas" data-lity>Confira</a>
+			<a class="button" href="#iniciativas-ext-int" data-lity>Confira</a>
 		</div>
 	</div>
 	<br class="clear" />
@@ -64,17 +67,18 @@
 		<a class="button" href="#fale" data-lity>Fale com o time de Branding</a>
 		<p class="copyright">Grupo ZAP © 2019</p>
 	</div>
-</div>
+</div> 
 
 <!-- MENU -->
 <div id="menu" class="view lity-hide">
 	<div class="container">
-		<div class="header">><a href="#" class="back" data-lity-close></a> <h2>Menu</h2> <a href="#" class="close" data-lity-close></a></div>
+		<div class="header"><a href="#" class="close" data-lity-close></a></div>
 		<div class="content">
 			<ul class="menu">
+				<li><a href="#" data-lity-close>Home</a></li>
 				<li><a href="#regras" data-lity-close data-lity>Regras e premissas</a></li>
-				<li><a href="#externas" data-lity-close data-lity>Iniciativas externas</a></li>
-				<li><a href="#internas" data-lity-close data-lity>Iniciativas internas</a></li>
+				<li><a href="#iniciativas-ext-int" data-lity-close data-lity>Iniciativas externas</a></li>
+				<li><a href="#iniciativas-ext-int" data-lity-close data-lity>Iniciativas internas</a></li>
 				<li><a href="#fale" data-lity-close data-lity>Fale com o time de Branding</a></li>
 			</ul>
 			<br class="clear" />
@@ -86,7 +90,7 @@
 <!-- FALE -->
 <div id="fale" class="view lity-hide">
 	<div class="container">
-		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Fale com o time de Branding</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Fale com o time de Branding</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
 		<div class="content">
 			<form id="fale-form"
 			action="https://formspree.io/mvopbzbk"
@@ -94,16 +98,20 @@
 			>
 				<p>Envie um e-mail para <a href="mailto:branding@grupozap.com">branding@grupozap.com</a> ou preencha  o formulário abaixo ;)</p>
 				<p class="input">
-					<input type="text" id="fale-nome" name="fale-nome" required />
-					<label for="fale-nome">Seu nome</label>
+					<input type="text" id="nome" name="nome" required />
+					<label for="nome">Seu nome</label>
 				</p>
 				<p class="input">
 					<input type="email" id="_replyto" name="_replyto" required />
 					<label for="_replyto">Seu melhor e-mail</label>
 				</p>
 				<p class="input">
-					<textarea id="fale-mensagem" name="fale-mensagem" required></textarea>
-					<label for="fale-mensagem">Mensagem</label>
+					<input type="phone" id="telefone" name="telefone" required />
+					<label for="telefone">Telefone</label>
+				</p>
+				<p class="input">
+					<textarea id="mensagem" name="mensagem" required></textarea>
+					<label for="mensagem">Mensagem</label>
 				</p>
 				<p id="fale-status"></p>
 				<p><button id="fale-submit">Enviar</button></p>
@@ -121,7 +129,7 @@
 <!-- REGRAS -->
 <div id="regras" class="view lity-hide">
 	<div class="container">
-		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity></a> </div>
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Regras e premissas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
 		<div class="content">
 			<div id="" class="qa">
 				<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
@@ -160,7 +168,13 @@
 </div>
 <!-- REGRAS END -->
 
-	<script src="assets/js/script.js"></script>
+<div id="iniciativas-ext-int" class="view map lity-hide">
+	<div class="container">
+		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Iniciativas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
+		<div class="content" id="mapa"></div>
+	</div>
+</div>
 
+	<script src="assets/js/script.js"></script>
 </body>
 </html>

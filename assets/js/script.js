@@ -1,10 +1,25 @@
 $(document).ready(
 	function () {
 
+        var lityReady = 0;
+        $(document).on('lity:ready', function(event, instance) {
+            if (event.target.id == 'iniciativas-ext-int') {
+                $(event.currentTarget.activeElement).addClass('mapa');
+                console.log(event.currentTarget.activeElement);
+                if(lityReady == 0){
+                    initMap();
+                    lityReady = 1;
+                }
+            }
+        });
 
-
-	}
+    }
 );
+
+/* video mais lento em 25% */
+
+var video = document.getElementById('video');
+video.playbackRate = 0.75;
 
 /* formspree.io */
 
@@ -14,21 +29,31 @@ window.addEventListener("DOMContentLoaded", function() {
     var button = document.getElementById("fale-submit");
     var status = document.getElementById("fale-status");
     var reset = document.getElementById("fale-reset");
+    var campos = $('#fale-form .input');
+    status.style = "display: none;";
     
     function success() {
         form.reset();
         button.style = "display: none";
-        status.innerHTML = "Envidado ;)";
+        status.innerHTML = "E-mail envidado com sucesso ;)";
+        status.style = "display: inline-block;";
+        status.style = "color: #66CC00;"
+        campos.hide();
     }
 
     function limpar() {
         form.reset();
         button.style = "display: block";
         status.innerHTML = "";
+        status.style = "display: none;";
+        campos.show();
     }
 
     function error() {
         status.innerHTML = "Oops! Ocorreu um erro :(";
+        status.style = "color: #FF0F0F;"
+        status.style = "display: inline-block;";
+        campos.hide();
     }
 
     form.addEventListener("submit", function(ev) {
@@ -59,20 +84,34 @@ function ajax(method, url, data, success, error) {
     xhr.send(data);
 }
 
-/* video mais lento em 25% */
+function initMap() {
+    var map = L.map('mapa', {
+        crs: L.CRS.Simple,
+        maxZoom: 0.05,
+        minZoom: -1.5,
+    });
 
-var video = document.getElementById('video');
-video.playbackRate = 0.75;
+    var bounds = [[0,0], [1480,1512]];
+    var image = L.imageOverlay('./assets/img/iniciativas.png', bounds).addTo(map);
 
-/* removedor de acentos */
+    map.fitBounds(bounds);
 
-function removeAcentos (text) {       
-    text = text.toLowerCase();                                                         
-    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
-    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
-    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
-    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
-    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
-    text = text.replace(new RegExp('[Ç]','gi'), 'c');
-    return text;                 
+    var circle = L.circle([1480/2, 1512/2], {
+        color: 'transparent',
+        strokeOpacity: 0,
+        fillColor: '#f03',
+        fillOpacity: 0.1,
+        radius: 100
+    }).addTo(map);
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent(e.latlng.toString())
+            .openOn(map);
+    }
+
+    map.on('click', onMapClick);
 }
