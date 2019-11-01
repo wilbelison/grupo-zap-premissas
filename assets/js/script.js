@@ -1,15 +1,10 @@
 $(document).ready(
 	function () {
 
-        var lityReady = 0;
         $(document).on('lity:ready', function(event, instance) {
             if (event.target.id == 'iniciativas-ext-int') {
                 $(event.currentTarget.activeElement).addClass('mapa');
                 console.log(event.currentTarget.activeElement);
-                if(lityReady == 0){
-                    initMap();
-                    lityReady = 1;
-                }
             }
         });
 
@@ -84,34 +79,25 @@ function ajax(method, url, data, success, error) {
     xhr.send(data);
 }
 
-function initMap() {
-    var map = L.map('mapa', {
-        crs: L.CRS.Simple,
-        maxZoom: 0.05,
-        minZoom: -1.5,
-    });
-
-    var bounds = [[0,0], [1480,1512]];
-    var image = L.imageOverlay('./assets/img/iniciativas.png', bounds).addTo(map);
-
-    map.fitBounds(bounds);
-
-    var circle = L.circle([1480/2, 1512/2], {
-        color: 'transparent',
-        strokeOpacity: 0,
-        fillColor: '#f03',
-        fillOpacity: 0.1,
-        radius: 100
-    }).addTo(map);
-
-    var popup = L.popup();
-
-    function onMapClick(e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent(e.latlng.toString())
-            .openOn(map);
+var premissas = {
+    content: {
+        type: 'question',
+        title: 'Olá, tudo bem?',
+        options: [{
+            label: 'Sim',
+            content: {
+                type: 'question',
+                title: 'Que bom, qual seu sexo?',
+                options: []
+            }
+        },
+        {
+            label: 'Não',
+            content: {
+                type: 'question',
+                title: 'Poxa, que pena. Quer ouvir uma piada?',
+                options: []
+            }
+        }]
     }
-
-    map.on('click', onMapClick);
 }
