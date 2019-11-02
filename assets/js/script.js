@@ -101,3 +101,24 @@ var premissas = {
         }]
     }
 }
+
+console.log(premissas);
+console.log(premissas.content);
+
+var printQA = function (opt) {
+    var html = (opt) ? renderQA(opt) : renderQA(premissas);
+}
+
+var renderQA = function(opt) {
+    console.log(opt);
+    var teste = opt.content.options[0];
+    var html = `<div>
+        <h1>${opt.content.title}</title>
+        <a onclick="printQA(${opt.content.options[0]})">${opt.content.options[0].label}</a>
+        <a onclick="printQA(${opt.content.options[1]})">${opt.content.options[1].label}</a>
+        </div>`;
+    $('body').append(html);
+    console.log(teste);
+}
+
+printQA();
