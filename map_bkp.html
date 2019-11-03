@@ -36,7 +36,7 @@
 	var map = L.map('map', {
 		crs: L.CRS.Simple,
         minZoom: -2,
-        maxZoom: 1
+		maxZoom: 1
 	});
 
 	var yx = L.latLng;
@@ -49,6 +49,7 @@
 	};
 
 	var bounds = [xy(0, 0), xy(mapWidth, mapHeight)];
+
 	var image = L.imageOverlay('./assets/img/map.png', bounds).addTo(map);
 
     var xyLatLng = function (xy) {
@@ -94,7 +95,9 @@
 		markersLayer.addLayer(marker);
 	}
 
-    map.fitBounds(bounds);
+	
+	map.fitBounds(bounds);
+	map.setMaxBounds(map.getBounds());
     
     map.on('click', function(e){
 		console.log('xyLatLng([' + latLngXy(e.latlng) + ']);');

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grupo ZAP - Iniciativas, regras e premissas</title>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="libs/normalize.min.css" rel="stylesheet">
+
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<script src="libs/jquery.min.js"></script>
+
+	<script src="data/regras.js"></script>
+
+	<style>
+
+		html, body {
+			height: 100%;
+			margin: 0;
+			background-color: #F2F2F2;
+			color: #666;
+		}
+		#regras {
+			width: 100%;
+			max-width: 640px;
+			margin: 0 auto;
+			padding-top: 30px;
+		}
+		#regras .qa {
+			border: 1px solid #F2F2F2;
+			padding: 30px;
+			border-radius: 4px;
+			margin-bottom: 30px;
+			background-color: #FFF;
+		}
+
+		#regras .qa.active {
+			border: 1px solid #C8D419;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		#regras .qa p {
+			font-size: 18px;
+			line-height: 24px;
+			color: #D0D0D0;
+			margin: 0;
+		}
+
+		#regras .qa.active p {
+			color: #6D767A;
+		}
+
+		#regras .qa .options {
+			list-style: none;
+			margin: 0;
+			margin-top: 20px;
+			padding: 0;
+		}
+
+		#regras .qa .options li {
+			float: left;
+			width: calc(50% - 10px);
+		}
+
+		#regras .qa .options li:nth-child(2) {
+			width: 20px;
+		}
+
+		#regras .qa .answers {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#regras .qa .answers li {
+			color: #6D767A;
+			display: block;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+
+
+		#regras .qa .answers li:last-child {
+			margin: 30px 0 -20px;
+		}
+
+		#regras .qa .answers li.green,
+		#regras .qa .answers li.yellow,
+		#regras .qa .answers li.red {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		#regras .qa .answers li.green:before,
+		#regras .qa .answers li.yellow:before,
+		#regras .qa .answers li.red:before {
+			content: '';
+			display: block;
+			float: left;
+			width: 24px;
+			height: 24px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin-right: 10px;
+			margin-top: -6px;
+		}
+
+		#regras .qa .answers li.green:before { background-image: url(assets/img/mini_icon_results_green.svg); }
+		#regras .qa .answers li.yellow:before { background-image: url(assets/img/mini_icon_results_yellow.svg); }
+		#regras .qa .answers li.red:before { background-image: url(assets/img/mini_icon_results_red.svg); }
+
+
+		#regras .qa .button {
+			background-color: #F2F2F2;
+			border-radius: 100px;
+			color: #D0D0D0;
+			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			line-height: 14px;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 14px 50px 13px;
+			display: inline-block;
+			width: 100%;
+			cursor: default;
+		}
+
+		#regras .qa .button.active {
+			color: #FFF;
+			background-color: #56BAA2;
+		}
+
+		#regras .qa.active .button {
+			border: 1px solid #00A591;
+			color: #00A591;
+			background-color: #FFF;
+			cursor: pointer;
+		}
+
+		#regras .qa.active .button:hover {
+			background-color: rgba(0, 165, 145, 0.2)
+		}
+
+		@media only screen and (max-width: 767px) {
+			#regras .qa {
+				padding: 20px;
+				margin-bottom: 20px;
+			}
+
+			#regras .qa .button {
+				padding: 14px 0;
+			}
+		}
+
+	</style>
+	
+</head>
+<body>
+
+
+	<div id="regras">
+		<div id="" class="qa">
+			<p>A ação é endossada pelo Grupo ZAP ou é uma iniciativa da área?</p>
+			<ul class="options">
+				<li><a class="button" href="">Grupo ZAP</a></li>
+				<li>&nbsp;</li>
+				<li><a class="button active" href="javascript:;">Área</a></li>
+			</ul>
+			<br class="clear" />
+		</div>
+		<div id="" class="qa">
+			<p>Tem interface com o público externo?</p>
+			<ul class="options">
+				<li><a class="button active" href="">Sim</a></li>
+				<li>&nbsp;</li>
+				<li><a class="button" href="javascript:;">Não</a></li>
+			</ul>
+			<br class="clear" />
+		</div>
+		<div id="" class="qa active">
+			<ul class="answers">
+				<li class="green">Pode ter páginas próprias (Blog ou página de inscrição no evento);</li>
+				<li class="green">Deve ter a identidade visual do Grupo ZAP;</li>
+				<li class="red">Não pode ter redes sociais;</li>
+				<li class="yellow">Deve contar com a orientação e/ou ajuda do Time de Branding para execução.</li>
+				<li><a class="button" href="javascript:;" onclick="parent.abrirFale();">Fale com o time de Branding</a></li>
+			</ul>
+			<br class="clear" />
+		</div>
+	</div>
+
+	<script>
+
+	var currentPoint = regras.content;
+	console.log(currentPoint);
+
+	function nextContent(e, i) {
+		console.log(e);
+		console.log(i);
+		currentPoint = currentPoint.content.options[i].content;
+		printContent(content);
+	}
+
+	var printContent = function(content) {
+		var html = `
+			<div id="" class="qa active">
+				<p>${content.title}</p>
+				<ul class="options">
+					<li><a class="button" href="javascript:;" onclick="nextContent(this, 0);">${content.options[0].label}</a></li>
+					<li>&nbsp;</li>
+					<li><a class="button" href="javascript:;" onclick="nextContent(this, 0);">${content.options[1].label}</a></li>
+				</ul>
+				<br class="clear" />
+			</div>`;
+
+		$('#regras').append(html);
+	}
+
+	printContent(currentPoint);
+	
+
+	</script>
+</body>
+</html>

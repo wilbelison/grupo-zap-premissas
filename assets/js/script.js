@@ -4,7 +4,9 @@ $(document).ready(
         $(document).on('lity:ready', function(event, instance) {
             if (event.target.id == 'iniciativas-ext-int') {
                 $(event.currentTarget.activeElement).addClass('mapa');
-                console.log(event.currentTarget.activeElement);
+            }
+            if (event.target.id == 'regras-e-premissas') {
+                $(event.currentTarget.activeElement).addClass('mapa');
             }
         });
 
@@ -79,50 +81,10 @@ function ajax(method, url, data, success, error) {
     xhr.send(data);
 }
 
-var premissas = {
-    content: {
-        type: 'question',
-        title: 'Olá, tudo bem?',
-        options: [{
-            label: 'Sim',
-            content: {
-                type: 'question',
-                title: 'Que bom, qual seu sexo?',
-                options: []
-            }
-        },
-        {
-            label: 'Não',
-            content: {
-                type: 'question',
-                title: 'Poxa, que pena. Quer ouvir uma piada?',
-                options: []
-            }
-        }]
-    }
+var abrirIniciativa = function(iniciativa) {
+    console.log(iniciativa);
 }
 
-console.log(premissas);
-console.log(premissas.content);
-
-var printQA = function (opt) {
-    var html = (opt) ? renderQA(opt) : renderQA(premissas);
-}
-
-var renderQA = function(opt) {
-    console.log(opt);
-    var teste = opt.content.options[0];
-    var html = `<div>
-        <h1>${opt.content.title}</title>
-        <a onclick="printQA(${opt.content.options[0]})">${opt.content.options[0].label}</a>
-        <a onclick="printQA(${opt.content.options[1]})">${opt.content.options[1].label}</a>
-        </div>`;
-    $('body').append(html);
-    console.log(teste);
-}
-
-printQA();
-
-var teste = function(test) {
-    console.log(test);
+var abrirFale = function() {
+    lity('#fale');
 }
