@@ -122,3 +122,7 @@ var renderQA = function(opt) {
 }
 
 printQA();
+
+var teste = function(test) {
+    console.log(test);
+}
