@@ -28,8 +28,8 @@
 			<a href="#" class="logo">Grupo ZAP</a>
 			<ul class="menu">
 				<li><a href="#regras-e-premissas" data-lity>Regras e premissas</a></li>
-				<li><a href="#iniciativas-ext-int" data-lity>Iniciativas internas</a></li>
-				<li><a href="#iniciativas-ext-int" data-lity>Iniciativas externas</a></li>
+				<li><a href="#iniciativas-externas" data-lity>Iniciativas internas</a></li>
+				<li><a href="#iniciativas-internas" data-lity>Iniciativas externas</a></li>
 				<li><a href="#fale" data-lity>Fale com o time de Branding</a></li>
 			</ul>
 			<a href="#menu" class="mobile" data-lity>Menu</a>
@@ -47,12 +47,12 @@
 		<div class="box externas">
 			<h2>Iniciativa externas</h2>
 			<p>Iniciativas que tem como principal propósito impactar o público externo sobre o Grupo ZAP, seja ele B2B ou B2C.</p>
-			<a class="button" href="#iniciativas-ext-int" data-lity>Confira</a>
+			<a class="button" href="#iniciativas-externas" data-lity>Confira</a>
 		</div>
 		<div class="box internas">
 			<h2>Iniciativa internas</h2>
-			<p>Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário. e devem ser conhecidas e voltadas para as nossas pessoas.</p>
-			<a class="button" href="#iniciativas-ext-int" data-lity>Confira</a>
+			<p>Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário e devem ser conhecidas e voltadas para as nossas pessoas.</p>
+			<a class="button" href="#iniciativas-internas" data-lity>Confira</a>
 		</div>
 	</div>
 	<br class="clear" />
@@ -72,10 +72,10 @@
 		<div class="header"><a href="#" class="close" data-lity-close></a></div>
 		<div class="content">
 			<ul class="menu">
-				<li><a href="#" data-lity-close>Home</a></li>
+				<li><a href="index.html" data-lity-close>Home</a></li>
 				<li><a href="#regras-e-premissas" data-lity-close data-lity>Regras e premissas</a></li>
-				<li><a href="#iniciativas-ext-int" data-lity-close data-lity>Iniciativas externas</a></li>
-				<li><a href="#iniciativas-ext-int" data-lity-close data-lity>Iniciativas internas</a></li>
+				<li><a href="#iniciativas-externas" data-lity-close data-lity>Iniciativas externas</a></li>
+				<li><a href="#iniciativas-internas" data-lity-close data-lity>Iniciativas internas</a></li>
 				<li><a href="#fale" data-lity-close data-lity>Fale com o time de Branding</a></li>
 			</ul>
 			<br class="clear" />
@@ -134,14 +134,25 @@
 </div>
 <!-- REGRAS END -->
 
-<div id="iniciativas-ext-int" class="view map lity-hide">
+<!-- INICIATIVAS -->
+<div id="iniciativas-externas" class="view map lity-hide">
 	<div class="container">
 		<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Iniciativas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
 		<div class="content">
-			<iframe id="mapa" src="map.html"></iframe>
+			<iframe id="mapa" src="map.html?iniciativas=externas"></iframe>
 		</div>
 	</div>
 </div>
+<div id="iniciativas-internas" class="view map lity-hide">
+		<div class="container">
+			<div class="header"><a href="#" class="back" data-lity-close></a> <h2>Iniciativas</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
+			<div class="content">
+				<iframe id="mapa" src="map.html?iniciativas=internas"></iframe>
+			</div>
+		</div>
+	</div>
+<!-- INICIATIVAS END -->
+
 
 	<script src="assets/js/script.js"></script>
 </body>

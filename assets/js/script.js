@@ -2,11 +2,8 @@ $(document).ready(
 	function () {
 
         $(document).on('lity:ready', function(event, instance) {
-            if (event.target.id == 'iniciativas-ext-int') {
-                $(event.currentTarget.activeElement).addClass('mapa');
-            }
-            if (event.target.id == 'regras-e-premissas') {
-                $(event.currentTarget.activeElement).addClass('mapa');
+            if (event.target.id == 'iniciativas-externas' || event.target.id == 'iniciativas-internas' || event.target.id == 'regras-e-premissas') {
+                $(event.currentTarget.activeElement).addClass('fixo');
             }
         });
 
@@ -83,6 +80,21 @@ function ajax(method, url, data, success, error) {
 
 var abrirIniciativa = function(iniciativa) {
     console.log(iniciativa);
+    var html = `
+        <div id="iniciativa" class="view">
+        <div class="container">
+            <div class="header"><a href="#" class="back" data-lity-close></a> <h2>${iniciativa.properties.nome}</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
+            <div class="content">
+                <div class="logo"></div>
+                <p class="descricao">${iniciativa.properties.descricao}</p>
+                <ul class="links">
+                    <li><a href="javascript:;" class="back" data-lity-close>Voltar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    `;
+    lity(html);
 }
 
 var abrirFale = function() {

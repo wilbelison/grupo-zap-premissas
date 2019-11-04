@@ -24,6 +24,7 @@
 		#map {
 			width: 100%;
 			height: 100vh;
+			background-color: #f2f2f2;
 		}
 
 	</style>
@@ -35,15 +36,21 @@
 
 <script>
 
-	var mapWidth = 2315;
-    var mapHeight = 2315;
+	var mapWidth = 2400;
+    var mapHeight = 2000;
 
 	var map = L.map('map',
 		{
 			crs: L.CRS.Simple,
-			minZoom: -2,
-			maxZoom: 2,
-			zoom: 0.5
+			minZoom: -1,
+			maxZoom: 0,
+			zoom: 0.5,
+			maxBounds: [
+				//south west
+				[0, mapWidth],
+				//north east
+				[mapHeight, 0]
+			] 
 		},
 		geojsonOpts = {
 			pointToLayer: function(feature, coordinates) {
@@ -52,8 +59,20 @@
 				var latLng = xyLatLng([x,y]);
 				var w = feature.geometry.size[0];
 				var h = feature.geometry.size[1];
-				return L.circle(latLng, w)
-					.on('click', function(){
+				var latlngs = [
+					xyLatLng([x, y], false),
+					xyLatLng([x+w, y], false),
+					xyLatLng([x+w, y+h], false),
+					xyLatLng([x, y+h], false)
+				];
+				/* return L(latLng, w) */
+				return L.polygon(latlngs, {
+					color: 'green',
+					weight: 0,
+					opacity: 0,
+					fillColor: 'green',
+					fillOpacity: 0
+				}).on('click', function(){
 						parent.abrirIniciativa(feature);
 					});
 			}
@@ -69,7 +88,17 @@
 		return yx(y, x);
 	};
 
-	var xyLatLng = function (xy) {
+	var xyLatLng = function (xy, obj = true) {
+        var lat = Math.abs(xy[1] - mapHeight);
+		var lng = xy[0];
+		if (obj) {
+			return { lat: lat, lng: lng };
+		} else {
+			return [lat,lng];
+		}
+	}
+	
+	var xyLatLngArray = function (xy) {
         var lat = Math.abs(xy[1] - mapHeight);
         var lng = xy[0];
         return { lat: lat, lng: lng };
@@ -83,7 +112,7 @@
 
 	var bounds = [xy(0, 0), xy(mapWidth, mapHeight)];
 
-	var image = L.imageOverlay('./assets/img/map.png', bounds).addTo(map);
+	var image = L.imageOverlay('data/img/iniciativas.jpg', bounds).addTo(map);
 
 	var poiLayers = L.layerGroup([
 		L.geoJson(iniciativas, geojsonOpts)
@@ -98,12 +127,18 @@
 			var type = val.layer.feature.properties.tipo;
 			return `<a href="#" class="${type}"> ${name} <span class="tipo">${type}</span></a>`;
 		},
-		zoom: 1
+		zoom: 0.1
 	})
 	.addTo(map);
 
-	map.fitBounds(bounds);
-	/* map.setMaxBounds(map.getBounds()); */
+	/* map.fitBounds(bounds); */
+
+	map.on('click', function(e){
+		console.log('coordinates: [' + latLngXy(e.latlng) + ']');
+	});
+
+	map.setView(xyLatLng([1280, 1020]), -1);
+
 
 </script>
 

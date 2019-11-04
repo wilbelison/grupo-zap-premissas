@@ -414,26 +414,26 @@ h1, h2, h3 {
 	padding: 30px;
 }
 
-.view .container .content .links {
+ul.links {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
-.view .container .content .links li {
+ul.links li {
 	margin: 20px;
 	margin-bottom: 0;
 }
 
-.view .container .content .links li a {
+ul.links li a {
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #6D767A;
 	text-decoration: none;
 }
 
-.view .container .content .links a:before {
+ul.links a:before {
 	content: '';
 	display: block;
 	float: left;
@@ -444,9 +444,9 @@ h1, h2, h3 {
 	margin-right: 10px;
 }
 
-.view .container .content .links a.reset:before { background-image: url(./../img/mini_icon_reset.svg); }
-.view .container .content .links a.back:before { background-image: url(./../img/mini_icon_back.svg); }
-.view .container .content .links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
+ul.links a.reset:before { background-image: url(./../img/mini_icon_reset.svg); }
+ul.links a.back:before { background-image: url(./../img/mini_icon_back.svg); }
+ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 
 /* FALE */
 
@@ -560,10 +560,10 @@ h1, h2, h3 {
 
 /* MAP */
 
-.lity.mapa .lity-container,
-.lity.mapa .lity-content,
-.lity.mapa .view,
-.lity.mapa .container {
+.lity.fixo .lity-container,
+.lity.fixo .lity-content,
+.lity.fixo .view,
+.lity.fixo .container {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -571,10 +571,10 @@ h1, h2, h3 {
 	border-radius: 0;
 }
 
-.lity.mapa .lity-container,
-.lity.mapa .lity-content,
-.lity.mapa .view,
-.lity.mapa .container,
+.lity.fixo .lity-container,
+.lity.fixo .lity-content,
+.lity.fixo .view,
+.lity.fixo .container,
 .lity.regras .lity-container,
 .lity.regras .lity-content,
 .lity.regras .view,
