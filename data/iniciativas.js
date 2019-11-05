@@ -391,7 +391,7 @@ var iniciativas = {
             },
             geometry: {
                 coordinates: [1520, 1450],
-                size: [156, 86],
+                size: [132, 170],
                 type: 'Point',
             },
             type: 'Feature',
