@@ -79,17 +79,14 @@ function ajax(method, url, data, success, error) {
 }
 
 var abrirIniciativa = function(iniciativa) {
-    console.log(iniciativa);
     var html = `
         <div id="iniciativa" class="view">
         <div class="container">
             <div class="header"><a href="#" class="back" data-lity-close></a> <h2>${iniciativa.properties.nome}</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
             <div class="content">
-                <div class="logo"></div>
+                <p class="logo"><img src="data/img/${iniciativa.properties.tipo + '/' + iniciativa.properties.logo}"></p>
+                <p class="tipo ${iniciativa.properties.tipo}">Iniciativa ${iniciativa.properties.tipo}</p>
                 <p class="descricao">${iniciativa.properties.descricao}</p>
-                <ul class="links">
-                    <li><a href="javascript:;" class="back" data-lity-close>Voltar</a></li>
-                </ul>
             </div>
         </div>
     </div>

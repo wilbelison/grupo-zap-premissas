@@ -23,11 +23,130 @@
 		
 		#map {
 			width: 100%;
-			height: 100vh;
+			height: 100%;
 			background-color: #f2f2f2;
 		}
 
+/********** Leaflet Customizations for **********/
+
+/* CONTROLS */
+.leaflet-bottom .leaflet-control,
+.leaflet-left .leaflet-control {
+	box-shadow: 0 0 20px rgba(0, 80, 129, .2);
+	border: 2px solid #005081;
+	border-radius:6px;
+}
+.leaflet-left.leaflet-top .leaflet-control,
+.leaflet-touch .leaflet-left .leaflet-control {
+	margin-left: 8px;
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+.leaflet-left.leaflet-bottom .leaflet-control {
+	margin-left: 8px;
+	margin-bottom: 8px;
+	margin-top: 0;
+}
+
+/* ZOOM */
+.leaflet-control-zoom,
+.leaflet-touch .leaflet-control-zoom {
+	border-radius:4px;
+}
+.leaflet-control-zoom a,
+.leaflet-touch .leaflet-control-zoom a,
+.leaflet-bar a,
+.leaflet-touch .leaflet-bar a {
+	background-color: rgba(255, 255, 255, 0.8);	
+	width: 32px;
+	height: 28px;
+}
+.leaflet-touch .leaflet-control-zoom-out {
+	line-height: 24px;	
+}
+.leaflet-control-zoom a:hover,
+.leaflet-touch .leaflet-control-zoom a:hover,
+.leaflet-bar a:hover,
+.leaflet-touch .leaflet-bar a:hover {
+	background-color: #fff;
+	width: 32px;
+	height: 28px;	
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+	-webkit-border-top-left-radius: 4px;
+	        border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	        border-top-right-radius: 4px;
+}
+.leaflet-touch .leaflet-bar a:last-child {
+	-webkit-border-bottom-left-radius: 4px;
+	        border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	        border-bottom-right-radius: 4px;
+	border-bottom: none;
+}
+
+/* ATTRIBUTION*/
+.leaflet-control.leaflet-control-attribution {
+	border:none;
+	padding:0 4px 2px 4px;
+	margin:0 -4px -4px 0;
+}
+
+.leaflet-control-search .search-tooltip {
+	max-height: calc(100vh - 160px);
+}
+
+.search-tooltip .search-tip {
+	font-size: 14px;
+	padding: 10px;
+}
+
+.leaflet-control-search .search-input {
+	font-size: 14px;
+	padding: 4px 8px;
+	border: none;
+	outline: none;
+}
+
+.search-tip .tipo {	
+	background-color: #979A9C;
+    display: inline-block;
+    margin: 0;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4;
+    border-radius: 4px;
+    font-size: 10px;
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+
+.search-tip .tipo.externa {
+	background-color: #C8D419;
+}
+
+.search-tip .tipo.interna {
+	background-color: #00A591;
+}
 	</style>
+
+<!--
+
+<div class="leaflet-control-search leaflet-control search-exp">
+	<label class="search-input" for="searchtext12" style="display: none;"></label>
+	<input class="search-input" type="text" size="12" autocomplete="off" autocapitalize="off" placeholder="Pesquisar..." id="searchtext12" style="display: block; max-width: 292px; outline: none;">
+	<ul class="search-tooltip" style="display: block;">
+		<a href="#" class="externa search-tip"> Viva Real <span class="tipo">externa</span></a>
+		<a href="#" class="externa search-tip"> Revista ZAP em Casa <span class="tipo">externa</span></a>
+	</ul>
+	<a class="search-cancel" href="#" title="Cancel" style="display: block;"><span>⊗</span></a>
+	<a class="search-button" href="#" title="Pesquisar..." style=""></a>
+	<div class="search-alert" style="display: none;"></div>
+</div>
+
+-->
 	
 </head>
 <body>
@@ -42,8 +161,8 @@
 	var map = L.map('map',
 		{
 			crs: L.CRS.Simple,
-			minZoom: -1,
-			maxZoom: 0,
+			minZoom: -2,
+			maxZoom: 1,
 			zoom: 0.5,
 			maxBounds: [
 				//south west
@@ -125,9 +244,10 @@
 		propertyName: 'nome',
 		buildTip: function(name, val) {
 			var type = val.layer.feature.properties.tipo;
-			return `<a href="#" class="${type}"> ${name} <span class="tipo">${type}</span></a>`;
+			return `<a href="#"> ${name} <span class="tipo ${type}">${type}</span></a>`;
 		},
-		zoom: 0.1
+		zoom: 0.1,
+		maker: false
 	})
 	.addTo(map);
 
@@ -137,7 +257,34 @@
 		console.log('coordinates: [' + latLngXy(e.latlng) + ']');
 	});
 
-	map.setView(xyLatLng([1280, 1020]), -1);
+
+	var getUrlParameter = function getUrlParameter(sParam) {
+		
+		var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+
+	};
+	
+	switch(getUrlParameter('iniciativas')){
+		case 'externas':
+			map.setView(xyLatLng([640, 964]), -1);
+			break;
+		case 'internas':
+			map.setView(xyLatLng([1792, 988]), -1);
+			break;
+		default:
+			map.setView(xyLatLng([1280, 1020]), -1);
+	}
 
 
 </script>
