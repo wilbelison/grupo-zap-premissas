@@ -133,7 +133,7 @@ var iniciativas = {
             properties: {
                 nome: 'Blog',
                 tipo: 'externa',
-                logo: null,
+                logo: '',
                 descricao: 'É um blog de conteúdo do Grupo ZAP com foco no mercado imobiliário, tendências, inovação e marketing.'
             },
             geometry: {
@@ -213,11 +213,11 @@ var iniciativas = {
             },
             type: 'Feature',
         },
-        {
+        /* {
             properties: {
                 nome: 'Extranet',
                 tipo: 'externa',
-                logo: null,
+                logo: '',
                 descricao: 'Ferramentas de auxílio para os profissionais responsáveis pela inclusão e manutenção dos anúncios e para os responsáveis pela gestão financeira no Portal ZAP.'
             },
             geometry: {
@@ -226,7 +226,7 @@ var iniciativas = {
                 type: 'Point',
             },
             type: 'Feature',
-        },
+        }, */
         {
             properties: {
                 nome: 'Geoimóvel',
@@ -353,7 +353,7 @@ var iniciativas = {
             },
             type: 'Feature',
         },
-        {
+        /* {
             properties: {
                 nome: 'SELECT',
                 tipo: 'externa',
@@ -366,30 +366,247 @@ var iniciativas = {
                 type: 'Point',
             },
             type: 'Feature',
-        },
+        }, */
         /* Internas */
+        {
+            properties: {
+                nome: 'Beers & Bytes',
+                tipo: 'interna',
+                logo: 'beersandbytes.png',
+                descricao: 'O beers & bytes é um evento que faz parte do Grupo ZAP - com o objetivo de abrir um espaço pra promover a troca de conhecimento entre profissionais da área de tecnologia.'
+            },
+            geometry: {
+                coordinates: [1448, 274],
+                size: [156, 86],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'INVICTUS',
+                tipo: 'interna',
+                logo: 'invictus.png',
+                descricao: 'Campanha de Incentivo do time comercial IMC.'
+            },
+            geometry: {
+                coordinates: [1520, 1450],
+                size: [156, 86],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        /* {
+            properties: {
+                nome: 'Super Hero',
+                tipo: 'interna',
+                logo: '',
+                descricao: 'Programa de Incentivo do time comercial INC.'
+            },
+            geometry: {
+                coordinates: [1448, 274],
+                size: [156, 86],
+                type: 'Point',
+            },
+            type: 'Feature',
+        }, */
+        {
+            properties: {
+                nome: 'Central de Marketing',
+                tipo: 'interna',
+                logo: 'centraldemarketing.png',
+                descricao: 'É o canal do time de marketing para ajudar ao time comercial vender mais e melhor. '
+            },
+            geometry: {
+                coordinates: [1496, 852],
+                size: [156, 74],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'T-rex',
+                tipo: 'interna',
+                logo: 'trex.png',
+                descricao: 'Time de Relacionamento & Experiência.'
+            },
+            geometry: {
+                coordinates: [1496, 1276],
+                size: [156, 168],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Voz do Cliente',
+                tipo: 'interna',
+                logo: 'vozdocliente.png',
+                descricao: 'É um projeto do time de T-rex com foco no cliente. '
+            },
+            geometry: {
+                coordinates: [1496, 1028],
+                size: [156, 108],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Programa Ser Líder',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1952, 1408],
+                size: [156, 24],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Formação.Líder',
+                tipo: 'interna',
+                logo: 'serlider_formacaolideres.png',
+                descricao: 'Formação de futuros líderes.'
+            },
+            geometry: {
+                coordinates: [1952, 1702],
+                size: [156, 98],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Líderes.LAB',
+                tipo: 'interna',
+                logo: 'serlider_lidereslab.png',
+                descricao: 'Profissionais recém promovidos/contratados.'
+            },
+            geometry: {
+                coordinates: [1952, 1532],
+                size: [156, 70],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Inspirar',
+                tipo: 'interna',
+                logo: 'serlider_inspirar.png',
+                descricao: 'Líderes de equipes que já passaram por programas de formação anteriores.'
+            },
+            geometry: {
+                coordinates: [1952, 1441],
+                size: [156, 82],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Master',
+                tipo: 'interna',
+                logo: 'serlider_inspirarmaster.png',
+                descricao: 'Líderes de Líderes.'
+            },
+            geometry: {
+                coordinates: [1952, 1612],
+                size: [156, 82],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Kids At Work',
+                tipo: 'interna',
+                logo: 'kidsatwork.png',
+                descricao: 'Evento focado no dia as crianças.'
+            },
+            geometry: {
+                coordinates: [2066, 392],
+                size: [156, 108],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Vem Vender',
+                tipo: 'interna',
+                logo: 'vemvender.png',
+                descricao: 'É um projeto do time comercial IMC voltado para os colaboradores do Grupo ZAP, conhecerem a rotina da equipe de vendas.'
+            },
+            geometry: {
+                coordinates: [1496, 1144],
+                size: [156, 58],
+                type: 'Point',
+            },
+            type: 'Feature',
+        }, 
+        {
+            properties: {
+                nome: 'OPA News',
+                tipo: 'interna',
+                logo: 'opanews.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1496, 936],
+                size: [156, 82],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Work & Play',
+                tipo: 'interna',
+                logo: 'workandplay.png',
+                descricao: 'É um evento de integração do Grupo ZAP.'
+            },
+            geometry: {
+                coordinates: [2066, 986],
+                size: [156, 148],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: "Dalila's Day",
+                tipo: 'interna',
+                logo: 'dalilasday.png',
+                descricao: 'É um evento do Grupo ZAP destinado adoção de cães.'
+            },
+            geometry: {
+                coordinates: [2066, 594],
+                size: [156, 108],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Por dentro dos times',
+                tipo: 'interna',
+                logo: 'pordentrodostimes.png',
+                descricao: 'É uma ação do time de endomarketing para conhecermos os times que integrão o Grupo ZAP.'
+            },
+            geometry: {
+                coordinates: [2066, 886],
+                size: [156, 96],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
     ]
 };
 
-/*
-
-INVICTUS	Campanha de Incentivo do time comercial IMC.
-Super Hero	Programa de Incentivo do time comercial INC. 
-Central de Marketing	É o canal do time de marketing para ajudar ao time comercial vender mais e melhor. 
-Beers & Bytes	O beers & bytes é um evento que faz parte do Grupo ZAP - com o objetivo de abrir um espaço pra promover a troca de conhecimento entre profissionais da área de tecnologia. 
-T-rex	Time de Relacionamento & Experiência
-Voz do Cliente	É um projeto do time de T-rex com foco no cliente. 
-Programa Ser Líder 	
-Formação.Líder	Formação de futuros líderes
-Líderes.LAB	Profissionais recém promovidos/contratados;
-Inspirar	Líderes de equipes que já passaram por programas de formação anteriores
-Master	Líderes de Líderes.
-Kids At Work	Evento focado no dia as crianças.
-Vem Vender	É um projeto do time comercial IMC voltado para os colaboradores do Grupo ZAP, conhecerem a rotina da equipe de vendas. 
-OPA News 	
-Work & Play	É um evento de integração do Grupo ZAP. 
-Dalila's Day	É um evento do Grupo ZAP destinado adoção de cães. 
-Por dentro dos times	É uma ação do time de endomarketing para conhecermos os times que integrão o Grupo ZAP.
-
-*/
 
