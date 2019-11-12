@@ -159,19 +159,20 @@
 <script>
 
 	var mapWidth = 2400;
-    var mapHeight = 2000;
+	var mapHeight = 2000;
+	var mapBoundMargin = 400;
 
 	var map = L.map('map',
 		{
 			crs: L.CRS.Simple,
 			minZoom: -2,
 			maxZoom: 1,
-			zoom: 0.5,
+			zoom: 1,
 			maxBounds: [
 				//south west
-				[0, mapWidth],
+				[0 - mapBoundMargin, mapWidth + mapBoundMargin],
 				//north east
-				[mapHeight, 0]
+				[mapHeight + mapBoundMargin, 0 - mapBoundMargin]
 			] 
 		},
 		geojsonOpts = {
@@ -280,10 +281,10 @@
 	
 	switch(getUrlParameter('iniciativas')){
 		case 'externas':
-			map.setView(xyLatLng([640, 964]), -1);
+			map.setView(xyLatLng([640, 964]), 0);
 			break;
 		case 'internas':
-			map.setView(xyLatLng([1792, 988]), -1);
+			map.setView(xyLatLng([1792, 988]), 0);
 			break;
 		default:
 			map.setView(xyLatLng([1280, 1020]), -1);

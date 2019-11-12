@@ -24,7 +24,7 @@ var regras = {
                                         class: 'green'
                                     },
                                     {
-                                        text: 'Pode ou não seguer com a identidade visual do Grupo ZAP;',
+                                        text: 'Pode ou não seguir com a identidade visual do Grupo ZAP;',
                                         class: 'green'
                                     },
                                     {
@@ -43,7 +43,7 @@ var regras = {
                                     {
                                         label: 'Sim',
                                         content: {
-                                            title: 'É uma ação de co-branding?',
+                                            title: 'É uma ação de co-branding (estratégia de unir duas marcas)?',
                                             type: 'question',
                                             options: [
                                                 {
@@ -128,7 +128,7 @@ var regras = {
                                     {
                                         label: 'Não',
                                         content: {
-                                            title: 'É uma ação de co-branding?',
+                                            title: 'É uma ação de co-branding (estratégia de unir duas marcas)?',
                                             type: 'question',
                                             options: [
                                                 {

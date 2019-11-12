@@ -661,11 +661,35 @@ ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 	}
 
 	#nav .mobile,
-	.view .container .header .back,
+	/* .view .container .header .back, */
 	.view .container .header .menu {
 		display: none;
 	}
 
+	.view .container .header .close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+		border-radius: 40px;
+		background-size: 20px;
+		background-image: url(./../img/icon_close_white.svg);
+		background-position: center;
+		background-color: #00A591;
+	}
+
+	.view .container .header .close:before {
+		content: 'Fechar';
+		text-align: right;
+		right: 50px;
+		position: absolute;
+		line-height: 40px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 12px;
+		color: #6D767A;
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -770,10 +794,6 @@ ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 		width: 95px;
 		height: 16px;
 		margin-top: 4px;
-	}
-
-	#fale form {
-		margin-top: 30px;
 	}
 	
 	#hero .box {

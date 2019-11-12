@@ -82,7 +82,7 @@ var abrirIniciativa = function(iniciativa) {
     var html = `
         <div id="iniciativa" class="view">
         <div class="container">
-            <div class="header"><a href="#" class="back" data-lity-close></a> <h2>${iniciativa.properties.nome}</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> </div>
+            <div class="header"><a href="#" class="back" data-lity-close></a> <h2>${iniciativa.properties.nome}</h2> <a href="#" class="close" data-lity-close></a> <a href="#menu" class="menu" data-lity-close data-lity></a> <br class="clear"></div>
             <div class="content">
                 <p class="logo"><img src="data/img/${iniciativa.properties.tipo + '/' + iniciativa.properties.logo}"></p>
                 <p class="tipo ${iniciativa.properties.tipo}">Iniciativa ${iniciativa.properties.tipo}</p>
