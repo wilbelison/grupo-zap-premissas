@@ -188,16 +188,23 @@
 					xyLatLng([x+w, y+h], false),
 					xyLatLng([x, y+h], false)
 				];
-				/* return L(latLng, w) */
+				var nome = feature.properties.nome;
+				var tipo = feature.properties.tipo;
+				var descricao = feature.properties.descricao;
+				var popupHtml = `
+					<h3 class="nome">${nome}</h3>
+					<p class="tipo">${tipo}</p>
+					<p class="descricao">${descricao}</p>
+				`;
 				return L.polygon(latlngs, {
 					color: 'green',
 					weight: 0,
 					opacity: 0,
 					fillColor: 'green',
 					fillOpacity: 0
-				}).on('click', function(){
+				}).bindPopup(popupHtml)/*.on('click', function(){
 						parent.abrirIniciativa(feature);
-					});
+					})*/;
 			}
 		}
 	);
@@ -242,7 +249,7 @@
 	])
 	.addTo(map);
 
-	L.control.search({
+	var controlSearch = L.control.search({
 		layer: poiLayers,
 		initial: false,
 		propertyName: 'nome',
@@ -250,10 +257,14 @@
 			var type = val.layer.feature.properties.tipo;
 			return `<a href="#"> ${name} <span class="tipo ${type}">${type}</span></a>`;
 		},
-		zoom: 0.1,
-		maker: false
+		zoom: 0.1
 	})
-	.addTo(map);
+
+	controlSearch.on('search:locationfound', function(event) {
+		event.layer.openPopup();
+	});
+
+	controlSearch.addTo(map);
 
 	/* map.fitBounds(bounds); */
 
