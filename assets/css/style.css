@@ -225,6 +225,16 @@ h1, h2, h3 {
 	margin-top: -4px;
 }
 
+#hero .box .button:hover:after,
+#iniciativas .button:hover:after {
+	margin-left: 30px;
+}
+
+#hero .box .button:hover,
+#iniciativas .button:hover {
+	padding-right: 50px;
+}
+
 #hero .box .button:hover {
 	background-color: rgba(255, 255, 255, 0.2)
 }
@@ -511,6 +521,7 @@ ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 #fale form p {
 	font-size: 16px;
 	line-height: 24px;
+	margin: 0;
 	margin-bottom: 20px;
 	color: #979A9C;
 }
@@ -661,7 +672,7 @@ ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 	}
 
 	#nav .mobile,
-	/* .view .container .header .back, */
+	.view .container .header .back,
 	.view .container .header .menu {
 		display: none;
 	}
@@ -677,6 +688,10 @@ ul.links a.link:before { background-image: url(./../img/mini_icon_link.svg); }
 		background-image: url(./../img/icon_close_white.svg);
 		background-position: center;
 		background-color: #00A591;
+	}
+
+	.view .container .header .close:hover {
+		opacity: 0.5;
 	}
 
 	.view .container .header .close:before {

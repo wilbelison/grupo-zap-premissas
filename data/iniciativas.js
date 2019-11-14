@@ -1,6 +1,8 @@
 var iniciativas = {
     features: [
-        /* Externas */
+        
+        /* ---------- EXTERNAS ---------- */
+
         {
             properties: {
                 nome: 'Viva Real',
@@ -23,14 +25,12 @@ var iniciativas = {
                 descricao: 'ZAP	O ZAP Imóveis é o maior portal de classificados de Imóveis e Imobiliárias. Encontre casas, apartamentos, terrenos e imóveis para compra, venda e aluguel.'
             },
             geometry: {
-                coordinates: [848, 606], /* [x,y] */
-                size: [156, 92], /* [w,h] */
+                coordinates: [848, 606],
+                size: [156, 92],
                 type: 'Point',
             },
             type: 'Feature',
         },
-
-
         {
             properties: {
                 nome: 'DataZAP',
@@ -201,6 +201,20 @@ var iniciativas = {
         },
         {
             properties: {
+                nome: 'ZAP Pro',
+                tipo: 'externa',
+                logo: 'zappro.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1082, 674],
+                size: [156, 108],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
                 nome: 'Canal Pro',
                 tipo: 'externa',
                 logo: 'canalpro.png',
@@ -213,20 +227,7 @@ var iniciativas = {
             },
             type: 'Feature',
         },
-        /* {
-            properties: {
-                nome: 'Extranet',
-                tipo: 'externa',
-                logo: '',
-                descricao: 'Ferramentas de auxílio para os profissionais responsáveis pela inclusão e manutenção dos anúncios e para os responsáveis pela gestão financeira no Portal ZAP.'
-            },
-            geometry: {
-                coordinates: [1280, 1020],
-                size: [156, 80],
-                type: 'Point',
-            },
-            type: 'Feature',
-        }, */
+
         {
             properties: {
                 nome: 'Geoimóvel',
@@ -353,21 +354,222 @@ var iniciativas = {
             },
             type: 'Feature',
         },
-        /* {
+
+        /* SEM DESCRIÇÃO */
+
+        {
             properties: {
-                nome: 'SELECT',
-                tipo: 'externa',
-                logo: 'select.png',
-                descricao: 'Programa de incentivo do Grupo ZAP para clientes Premium, voltado para imobiliárias e incorporadoras.'
+                nome: 'Iniciativas externas',
+                tipo: '',
+                logo: '',
+                descricao: 'Iniciativas que tem como principal propósito impactar o público externo sobre o Grupo ZAP, seja ele B2B ou B2C.'
             },
             geometry: {
-                coordinates: [1280, 1020],
-                size: [156, 80],
+                coordinates: [580, 930],
+                size: [126, 66],
                 type: 'Point',
             },
             type: 'Feature',
-        }, */
-        /* Internas */
+        },
+        {
+            properties: {
+                nome: 'Marketing',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [732, 588],
+                size: [88, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Conteúdo',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [732, 1064],
+                size: [88, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Inteligência',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [732, 1424],
+                size: [88, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Workshop incorporadoras',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [898, 1126],
+                size: [124, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Conecta Imobi Eventos',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1030, 1310],
+                size: [50, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Crédito imobiliário',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [406, 462],
+                size: [144, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Gestão',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [482, 966],
+                size: [68, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Incorporadoras',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [360, 968],
+                size: [94, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'INC Pro',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 616],
+                size: [156, 70],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'houseconcierge',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 808],
+                size: [156, 48],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'housebot',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 866],
+                size: [156, 52],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'houseead',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 984],
+                size: [156, 64],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Sistemas mobile',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 1298],
+                size: [156, 42],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'houseparceriasmobile',
+                tipo: 'externa',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [178, 1348],
+                size: [156, 52],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+
+        /* ---------- INTERNAS ---------- */
+
         {
             properties: {
                 nome: 'Beers & Bytes',
@@ -396,20 +598,6 @@ var iniciativas = {
             },
             type: 'Feature',
         },
-        /* {
-            properties: {
-                nome: 'Super Hero',
-                tipo: 'interna',
-                logo: '',
-                descricao: 'Programa de Incentivo do time comercial INC.'
-            },
-            geometry: {
-                coordinates: [1448, 274],
-                size: [156, 86],
-                type: 'Point',
-            },
-            type: 'Feature',
-        }, */
         {
             properties: {
                 nome: 'Central de Marketing',
@@ -602,6 +790,373 @@ var iniciativas = {
             geometry: {
                 coordinates: [2066, 886],
                 size: [156, 96],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+
+        /* SEM DESCRIÇÃO */
+
+        {
+            properties: {
+                nome: 'Iniciativas internas',
+                tipo: '',
+                logo: '',
+                descricao: 'Criadas pelas pessoas do Grupo ZAP que não são soluções para o mercado imobiliário e devem ser conhecidas e voltadas para as nossas pessoas.'
+            },
+            geometry: {
+                coordinates: [1732, 954],
+                size: [126, 68],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Marca empregadora',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1884, 758],
+                size: [154, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Eventos',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1630, 520],
+                size: [72, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'DO',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1886, 1588],
+                size: [40, 32],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Grupo ZAP Tech',
+                tipo: 'interna',
+                logo: 'grupozaptech.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1448, 368],
+                size: [156, 152],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: '#TudoJunto',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1534, 530],
+                size: [70, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Beers & Cheers',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1522, 562],
+                size: [82, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Design Talks',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1534, 596],
+                size: [70, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: '#FicaVaiTerBolo',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1518, 628],
+                size: [86, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: '1st Security Conference',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1448, 662],
+                size: [156, 102],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Encontro de integração e DBM',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1460, 772],
+                size: [144, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Pílulas de Conhecimento',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1532, 1208],
+                size: [120, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Planejamento',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1576, 1242],
+                size: [76, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Diversidade',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1586, 1660],
+                size: [66, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Clima Grupo ZAP',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [1562, 1694],
+                size: [90, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Jovem Aprendiz',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2067, 202],
+                size: [84, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Formação Inicial',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 234],
+                size: [84, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Vaga Interna',
+                tipo: 'interna',
+                logo: 'vagainterna.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 268],
+                size: [156, 82],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Integração',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 358],
+                size: [62, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Kids at work',
+                tipo: 'interna',
+                logo: 'kidsatwork.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 392],
+                size: [156, 108],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'ZAP Talents',
+                tipo: 'interna',
+                logo: 'zaptalents.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 508],
+                size: [156, 45],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Sales Academy',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 560],
+                size: [80, 24],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Arraiá',
+                tipo: 'interna',
+                logo: 'arraia.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 712],
+                size: [156, 132],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Eu no Grupo ZAP',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 854],
+                size: [88, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Ciclo de Cultura e Performance',
+                tipo: 'interna',
+                logo: '',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 1142],
+                size: [146, 26],
+                type: 'Point',
+            },
+            type: 'Feature',
+        },
+        {
+            properties: {
+                nome: 'Comemorar Aniversário',
+                tipo: 'interna',
+                logo: 'comemoraraniversario.png',
+                descricao: ''
+            },
+            geometry: {
+                coordinates: [2066, 1178],
+                size: [156, 170],
                 type: 'Point',
             },
             type: 'Feature',

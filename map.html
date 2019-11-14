@@ -115,41 +115,73 @@
 
 .search-tip .tipo {	
 	background-color: #979A9C;
-    display: inline-block;
     margin: 0;
     color: #fff;
     padding: 4px 8px;
-    border-radius: 4;
     border-radius: 4px;
     font-size: 10px;
 	text-transform: uppercase;
 	margin-left: 10px;
+	display: none;
 }
 
 .search-tip .tipo.externa {
 	background-color: #C8D419;
+	display: inline-block;
 }
 
 .search-tip .tipo.interna {
 	background-color: #00A591;
+	display: inline-block;
 }
-	</style>
 
-<!--
+.leaflet-popup-content {
+	padding: 8px;
+}
 
-<div class="leaflet-control-search leaflet-control search-exp">
-	<label class="search-input" for="searchtext12" style="display: none;"></label>
-	<input class="search-input" type="text" size="12" autocomplete="off" autocapitalize="off" placeholder="Pesquisar..." id="searchtext12" style="display: block; max-width: 292px; outline: none;">
-	<ul class="search-tooltip" style="display: block;">
-		<a href="#" class="externa search-tip"> Viva Real <span class="tipo">externa</span></a>
-		<a href="#" class="externa search-tip"> Revista ZAP em Casa <span class="tipo">externa</span></a>
-	</ul>
-	<a class="search-cancel" href="#" title="Cancel" style="display: block;"><span>⊗</span></a>
-	<a class="search-button" href="#" title="Pesquisar..." style=""></a>
-	<div class="search-alert" style="display: none;"></div>
-</div>
+.leaflet-popup-content .nome {
+	color: #6D767A;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 8px;
+	position: relative;
+}
 
--->
+.leaflet-popup-content .tipo {
+	background-color: #979A9C;
+    display: inline-block;
+    margin: 0;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+	text-transform: uppercase;
+	margin-left: 8px;
+	line-height: 12px;
+}
+
+.leaflet-popup-content .tipo {
+	display: none;
+}
+
+.leaflet-popup-content .tipo.externa {
+	background-color: #C8D419;
+	display: inline-block;
+}
+
+.leaflet-popup-content .tipo.interna {
+	background-color: #00A591;
+	display: inline-block;
+}
+
+.leaflet-popup-content .descricao {
+	color: #6D767A;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0;
+}
+</style>
 	
 </head>
 <body>
@@ -192,8 +224,7 @@
 				var tipo = feature.properties.tipo;
 				var descricao = feature.properties.descricao;
 				var popupHtml = `
-					<h3 class="nome">${nome}</h3>
-					<p class="tipo">${tipo}</p>
+					<h3 class="nome">${nome} <span class="tipo ${tipo}">${tipo}</span></h3>
 					<p class="descricao">${descricao}</p>
 				`;
 				return L.polygon(latlngs, {
@@ -202,9 +233,7 @@
 					opacity: 0,
 					fillColor: 'green',
 					fillOpacity: 0
-				}).bindPopup(popupHtml)/*.on('click', function(){
-						parent.abrirIniciativa(feature);
-					})*/;
+				}).bindPopup(popupHtml);
 			}
 		}
 	);
